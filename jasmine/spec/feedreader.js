@@ -31,7 +31,12 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-
+        it('has url', function() {
+          allFeeds.forEach(function(feed) {
+            expect(feed.url).toBeDefined();
+            expect(feed.url.lenght).not.toBe(0);
+          });
+        });
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
@@ -64,7 +69,6 @@ $(function() {
          */
 
     /* TODO: Write a new test suite named "New Feed Selection"
-
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
